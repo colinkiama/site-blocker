@@ -1,0 +1,17 @@
+{
+  "name": "site-blocker",
+  "version": "1.0.0",
+  "description": "Site Blocker Extensino",
+  "main": "app.js",
+  "scripts": {
+    "start": "snowpack dev",
+    "build": "snowpack build"
+  },
+  "author": "",
+  "license": "MIT",
+  "devDependencies": {
+    "@snowpack/plugin-sass": "^1.4.0",
+    "snowpack": "^3.3.7"
+  },
+  "dependencies": {}
+}
