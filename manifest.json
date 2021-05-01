@@ -16,5 +16,10 @@
     "browser_style": false,
     "chrome_style": false,
     "open_in_tab": true
-  }
+  },
+  "permissions": [
+    "<all_urls>",
+    "tabs"
+  ]
+
 }

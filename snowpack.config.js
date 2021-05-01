@@ -6,14 +6,6 @@ module.exports = {
   mount: {
     /* ... */
   },
-  plugins: [
-    [
-      '@snowpack/plugin-sass',
-      {
-        /* see options below */
-      },
-    ],
-  ],
   packageOptions: {
      polyfillNode: true,
     /* ... */
@@ -24,10 +16,13 @@ module.exports = {
   buildOptions: {
     /* ... */
   },
-   optimize: {
+   optimize: {    
+    entrypoints: [
+    'views/popup/popup.js',
+    'views/background-page/background-script.js'
+    ],
     bundle: true,
     minify: true,
-    splitting: true,
     target: 'es2017',
   },
 };
