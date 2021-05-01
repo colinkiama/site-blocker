@@ -5,13 +5,15 @@
   "main": "app.js",
   "scripts": {
     "start": "snowpack dev",
-    "build": "snowpack build"
+    "build": "snowpack build",
+    "dev": "npm run build && web-ext run -s build"
   },
   "author": "",
   "license": "MIT",
   "devDependencies": {
     "@snowpack/plugin-sass": "^1.4.0",
-    "snowpack": "^3.3.7"
+    "snowpack": "^3.3.7",
+    "web-ext": "^6.1.0"
   },
   "dependencies": {}
 }

@@ -1,0 +1,14 @@
+{
+  "name": "Site Blocker",
+  "version": "0.1",
+  "description": "Blocks sites",
+  "manifest_version": 2,
+  "background": {
+    "page": "views/background-page/background-page.html"
+  },
+  "browser_action": {
+    "default_icon": "assets/icons/icon-32.png",
+    "default_title": "Site Blocker",
+    "default_popup": "views/popup/popup.html"
+  }
+}
