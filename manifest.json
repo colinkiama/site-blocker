@@ -10,5 +10,11 @@
     "default_icon": "assets/icons/icon-32.png",
     "default_title": "Site Blocker",
     "default_popup": "views/popup/popup.html"
+  },
+  "options_page": "views/options/options.html",
+  "options_ui": {
+    "page": "views/options/options.html",
+    "browser_style": false,
+    "chrome_style": false
   }
 }
