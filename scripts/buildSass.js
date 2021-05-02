@@ -18,8 +18,6 @@ function buildAndCopySass(sourcePath, destinationPath){
 }
 // Build view styles.
 viewNames.forEach(name => {
-	console.log("View Name:", name);
-
 	const sourcePath = `./views/${name}/${name}.scss`;
 	const destinationPath = `./dist/${name}.css`;
 

@@ -3,9 +3,12 @@
   "version": "1.0.0",
   "description": "Site Blocker Extensino",
   "scripts": {
-    "start": "snowpack dev",
-    "build": "snowpack build",
-    "dev": "npm run build && web-ext run -s build"
+    "start": "npm run sass:build && snowpack dev",
+    "build": "npm run sass:build:prod && snowpack build",
+    "dev": "npm run sass:build:prod && npm run build && web-ext run -s build",
+    "sass:build": "node scripts/buildSass.js",
+    "sass:build:prod": "npm run sass:build && npm run sass:copy",
+    "sass:copy": "node scripts/copyDistToBuild.js"
   },
   "author": "",
   "license": "MIT",
