@@ -8,21 +8,21 @@
 	<link rel="stylesheet" type="text/css" href="/dist/popup.css">
 </head>
 <body>
-	<header class="container">
-		<div class="border-line"></div>
-		<span>Site Blocker</span>
-		<div class="border-line"></div>
-	</header>
+	<main>
+		<header>
+			<div class="border-line"></div>
+			<span>Site Blocker</span>
+			<div class="border-line"></div>
+		</header>
 
-	<main class="container">
-		<div>
-			<span>facebook.com</span>
-			<span>Not blocked</span>
+		<div class="site-info">
+			<span id="site-url">facebook.com</span>
+			<span id="blocked-status">Not blocked</span>
 		</div>
 
 		<div class="actions">
-			<button class="primary">Settings</button>
-			<button class="primary">Block</button>
+			<button id="settings" class="secondary">Settings</button>
+			<button id="block" class="primary">Block</button>
 		</div>
 	</main>
 	

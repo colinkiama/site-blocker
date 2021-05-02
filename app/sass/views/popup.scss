@@ -1,9 +1,23 @@
 @use "../abstracts/colors";
+@use "../layout/grid";
+@use "../base/typography";
+
+main {
+	@extend %container;
+	height: 100vh;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	padding-top: 2.5rem;
+	padding-bottom: 2.5rem;
+
+}
 
 header {
+	width: 100%;
 	display: flex;
 	align-items: center;
-	margin-top: 2.5rem;
+	
 }
 
 header .border-line {
@@ -20,5 +34,40 @@ header .border-line {
 }
 
 header span {
+	@extend h3;
+}
+
+.site-info {
+	display: flex;
+	flex: 1 1 0%;
+	flex-direction: column;
+	align-items:center;
+	justify-content: center;
+}
+
+.actions {
 
 }
+
+.actions > * {
+	margin-right: 1.25rem;
+
+	&:last-child {
+		margin-right: 0;
+	}
+}
+
+#site-url {
+	@extend h2;
+}
+
+
+#blocked-status {
+	@extend h4;
+	font-weight: typography.$font-weight-medium;
+	margin-top: 2rem;
+
+}
+
+
+

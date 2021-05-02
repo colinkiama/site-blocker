@@ -1,7 +1,10 @@
 @use '../abstracts/colors';
+@use "../base/typography";
 
 // Universal
-$border-radius: 2px;
+$border-radius: 0.125rem;
+$primary-padding: 0.5rem 2.5rem;
+$secondary-padding: 0.5rem;
 
 // Light variables
 $light-primary-background: colors.$dark-gray;
@@ -16,12 +19,19 @@ $dark-primary-foreground: colors.$dark-gray;
 $dark-primary-background-hover: colors.$gray;
 $dark-secondary-foreground: colors.$white;
 	
+
+button.primary,
+button.secondary {
+	@extend h3;
+}
+
 button.primary {
 	background: $light-primary-background;
 	color: $light-primary-foreground;
 	border-radius: $border-radius;
+	padding: $primary-padding;
 
-	&:hover {
+	&:hover, &:focus {
 		background: $light-primary-background-hover;
 	}
 
@@ -34,15 +44,15 @@ button.primary {
 button.secondary {
 	background: transparent;
 	color: $light-secondary-foreground;
+	padding: $secondary-padding;
 
-	&:hover  {
+	&:hover, &:focus  {
 		color: $light-secondary-foreground-hover;
 	}
 
 	@media (prefers-color-scheme: dark) {
 		color: $dark-secondary-foreground;
 	}
-
 }
 
 
