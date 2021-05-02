@@ -9,15 +9,16 @@ $secondary-padding: 0.5rem;
 // Light variables
 $light-primary-background: colors.$dark-gray;
 $light-primary-foreground: colors.$white;
-$light-primary-background-hover: colors.$gray;
+$light-primary-background-hover: colors.$medium-gray;
 $light-secondary-foreground: colors.$dark-gray;
-$light-secondary-foreground-hover: colors.$gray;
+$light-secondary-foreground-hover: colors.$medium-gray;
 
 // Dark Variables
 $dark-primary-background: colors.$white;
 $dark-primary-foreground: colors.$dark-gray;
 $dark-primary-background-hover: colors.$gray;
 $dark-secondary-foreground: colors.$white;
+$dark-secondary-foreground-hover: colors.$gray;
 	
 
 button.primary,
@@ -38,6 +39,10 @@ button.primary {
 	@media (prefers-color-scheme: dark) {
 		background: $dark-primary-background;
 		color: $dark-primary-foreground;
+
+		&:hover, &:focus {
+			background: $dark-primary-background-hover;
+		}
 	}
 }
 
@@ -52,6 +57,10 @@ button.secondary {
 
 	@media (prefers-color-scheme: dark) {
 		color: $dark-secondary-foreground;
+
+		&:hover, &:focus  {
+			color: $dark-secondary-foreground-hover;
+		}
 	}
 }
 
