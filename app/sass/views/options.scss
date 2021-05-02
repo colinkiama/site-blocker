@@ -1,0 +1,31 @@
+@use "../layout/grid";
+main {
+	display: flex;
+	flex-direction: column;
+	flex: 1 1 0%;
+	padding-top: 2.5rem;	
+}
+
+header {
+	@extend %container;
+}
+
+main > div:first-of-type {
+	@extend %container;
+}
+
+#add-site-button {
+	margin-top: 0.25rem;
+}
+
+.block-list {
+	@extend %container;
+	flex: 1 1 0px;
+	margin-top: 1.5rem;	
+	padding-top: 1rem;
+}
+
+
+
+	
+

@@ -1,0 +1,14 @@
+@use "item";
+
+.block-list {
+	overflow-x: hidden;
+	overflow-y: auto;
+}
+
+.block-list .block-list-item {
+	margin-bottom: 1.5rem;
+
+	&:last-child {
+		margin-bottom: 0;
+	}
+}
