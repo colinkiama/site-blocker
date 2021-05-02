@@ -3,14 +3,26 @@ main {
 	display: flex;
 	flex-direction: column;
 	flex: 1 1 0%;
-	padding-top: 2.5rem;	
+	padding-top: 2.5rem;
+
+	@media (min-width: 800px) {
+		align-items: center;	
+	}
+
+	
 }
 
 header {
 	@extend %container;
 }
 
-main > div:first-of-type {
+main > div {
+	display: flex;
+	flex: 1 1 0%;
+	flex-direction: column;
+}
+
+main > div > div:first-of-type {
 	@extend %container;
 }
 
@@ -23,7 +35,12 @@ main > div:first-of-type {
 	flex: 1 1 0px;
 	margin-top: 1.5rem;	
 	padding-top: 1rem;
+
+	@media (min-width: 800px) {
+		width: 43.75rem;
+	}
 }
+
 
 
 
