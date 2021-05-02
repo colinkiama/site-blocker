@@ -15,10 +15,6 @@ function buildAndCopySass(sourcePath, destinationPath){
 		console.error(err);
 	}
 
-	// Check file data.
-	console.log(`Checking ${destinationPath}`);
-	const data = fs.readFileSync(destinationPath, 'utf8');
-	console.log(data);	
 }
 // Build view styles.
 viewNames.forEach(name => {
