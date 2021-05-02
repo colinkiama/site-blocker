@@ -28,7 +28,7 @@ viewNames.forEach(name => {
 
 // Build global styles
 const globalStyleName = 'app';
-const sourcePath = `./${globalStyleName}/${globalStyleName}.scss`;
+const sourcePath = `./${globalStyleName}/sass/${globalStyleName}.scss`;
 const destinationPath = `./dist/${globalStyleName}.css`;
 
 buildAndCopySass(sourcePath, destinationPath);

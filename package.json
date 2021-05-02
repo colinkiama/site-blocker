@@ -1,19 +1,33 @@
 {
   "name": "site-blocker",
-  "version": "1.0.0",
-  "description": "Site Blocker Extensino",
+  "version": "0.1.0",
+  "description": "Site Blocker Extension",
+  "watch": {
+    "sass:build:prod": {
+      "patterns": [
+        "app",
+        "components",
+        "views"
+      ],
+      "extensions": "scss",
+      "runOnChangeOnly": true
+    }
+  },
   "scripts": {
-    "start": "npm run sass:build && snowpack dev",
+    "start": "concurrently \"npm run sass:watch\" \"snowpack dev\"",
     "build": "npm run sass:build:prod && snowpack build",
-    "dev": "npm run sass:build:prod && npm run build && web-ext run -s build",
+    "dev": "concurrently \"npm run sass:watch\" \"npm run sass:build:prod && npm run build && web-ext run -s build\"",
     "sass:build": "node scripts/buildSass.js",
     "sass:build:prod": "npm run sass:build && npm run sass:copy",
-    "sass:copy": "node scripts/copyDistToBuild.js"
+    "sass:copy": "node scripts/copyDistToBuild.js",
+    "sass:watch": "npm-watch sass:build:prod"
   },
   "author": "",
   "license": "MIT",
   "devDependencies": {
+    "concurrently": "^6.0.2",
     "fs-extra": "^9.1.0",
+    "npm-watch": "^0.9.0",
     "sass": "^1.32.12",
     "snowpack": "^3.3.7",
     "web-ext": "^6.1.0"

@@ -1,0 +1,50 @@
+@use '../abstracts/colors';
+
+// Universal
+$border-radius: 2px;
+
+// Light variables
+$light-primary-background: colors.$dark-gray;
+$light-primary-foreground: colors.$white;
+$light-primary-background-hover: colors.$gray;
+$light-secondary-foreground: colors.$dark-gray;
+$light-secondary-foreground-hover: colors.$gray;
+
+// Dark Variables
+$dark-primary-background: colors.$white;
+$dark-primary-foreground: colors.$dark-gray;
+$dark-primary-background-hover: colors.$gray;
+$dark-secondary-foreground: colors.$white;
+	
+button.primary {
+	background: $light-primary-background;
+	color: $light-primary-foreground;
+	border-radius: $border-radius;
+
+	&:hover {
+		background: $light-primary-background-hover;
+	}
+
+	@media (prefers-color-scheme: dark) {
+		background: $dark-primary-background;
+		color: $dark-primary-foreground;
+	}
+}
+
+button.secondary {
+	background: transparent;
+	color: $light-secondary-foreground;
+
+	&:hover  {
+		color: $light-secondary-foreground-hover;
+	}
+
+	@media (prefers-color-scheme: dark) {
+		color: $dark-secondary-foreground;
+	}
+
+}
+
+
+
+

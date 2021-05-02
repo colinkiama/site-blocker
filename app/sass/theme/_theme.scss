@@ -1,0 +1,9 @@
+body {
+	background: colors.$white;
+	color: colors.$dark-gray;
+
+	@media (prefers-color-scheme: dark) {
+		background: colors.$dark-gray;
+		color: colors.$white;
+	}
+}
