@@ -1,3 +1,5 @@
+@use "../abstracts/colors";
+
 body {
 	background: colors.$white;
 	color: colors.$dark-gray;

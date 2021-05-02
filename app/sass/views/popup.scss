@@ -1,0 +1,24 @@
+@use "../abstracts/colors";
+
+header {
+	display: flex;
+	align-items: center;
+	margin-top: 2.5rem;
+}
+
+header .border-line {
+	flex: 1 1 0%;
+	border-bottom: solid 1px colors.$gray;
+
+	&:first-child {
+		margin-right: 1.25rem;
+	}
+
+	&:last-child {
+		margin-left: 1.25rem;
+	}
+}
+
+header span {
+
+}
