@@ -1,0 +1,23 @@
+@use "../abstracts/colors";
+
+// Universal variables
+$foreground-hover: colors.$gray;
+
+// Light variables
+$light-foreground: colors.$dark-gray;
+
+// Dark variables
+$dark-foreground: colors.$white; 
+
+a {
+	color: $light-foreground;
+
+	&:hover {
+		color: $foreground-hover;
+	}
+
+
+	@media (prefers-color-scheme: dark) {
+		color: $dark-foreground;
+	}
+}

@@ -6,6 +6,7 @@ main {
 	padding-top: 2.5rem;
 
 	@media (min-width: 800px) {
+		padding-top: 5rem;
 		align-items: center;	
 	}
 
@@ -39,6 +40,8 @@ main > div > div:first-of-type {
 	@media (min-width: 800px) {
 		width: 43.75rem;
 	}
+
+	
 }
 
 
