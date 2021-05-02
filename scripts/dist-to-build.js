@@ -1,14 +1,14 @@
-const fse = require('fs-extra');
+const fs = require('fs-extra');
 
 const srcDir = `./dist`;
-const destDir = `/build`;
+const destDir = `./build/dist`;
 
 
 
 // To copy a folder or file  
 
 try {
-	fse.copySync(srcDir, destDir, {overwrite: true}, function (err) {
+	fs.copySync(srcDir, destDir, {overwrite: true}, function (err) {
 		if (err) {    
 			console.error(err); 
 	 	} else {
