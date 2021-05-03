@@ -63,6 +63,7 @@ export default class extends Controller {
 
 	block(){
 		console.log("Block current site")
+		// Blocklist.add(this.url)
 	}
 	
 
