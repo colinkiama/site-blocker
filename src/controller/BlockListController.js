@@ -1,4 +1,5 @@
 import { Controller } from "stimulus";
+import { getHostName } from "../utils/URLHelper.js"; 
 
 export default class extends Controller {
 	static targets = ["listElement"];
@@ -35,8 +36,15 @@ export default class extends Controller {
 	}
 
 	add() {
-		console.log("Button");
 		let url = window.prompt("Enter a url to block");
+
+		try{
+			let hostNameToAdd = getHostName(url);
+			console.log(`Adding ${hostNameToAdd} to block list!`);
+		}
+		catch (err) {
+			window.alert(err);
+		}
 	}
 
 
