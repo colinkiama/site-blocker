@@ -6,16 +6,14 @@ export default class extends Controller {
 
 	connect() {
 		console.log("retreiving all blocklist items");
-
 		this.blockList = ["www.tiktok.com", "www.facebook.com"];
-
 		this.createListElements();
 	}
 
 	createListElements(){
 		for (var i = this.blockList.length - 1; i >= 0; i--) {
 			let url = this.blockList[i];
-			
+
 			this.addBlockListItem(url);
 		}
 	}
@@ -27,9 +25,12 @@ export default class extends Controller {
         let removeButton = document.createElement("button");
         removeButton.textContent = "Remove";
         removeButton.classList.add("primary");
+        removeButton.setAttribute("data-action", "block-list-item#delete");
 
         let blockListItem = document.createElement('li');
         blockListItem.classList.add("block-list-item");
+        blockListItem.setAttribute("data-controller", "block-list-item");
+        blockListItem.setAttribute("data-block-list-item-url-value", url);
 
         blockListItem.appendChild(urlSpan);
         blockListItem.appendChild(removeButton);
@@ -56,6 +57,4 @@ export default class extends Controller {
 			window.alert(err);
 		}
 	}
-
-
 }
