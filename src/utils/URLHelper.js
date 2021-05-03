@@ -1,4 +1,4 @@
-export function getHostName(urlString){
+export function getHostname(urlString){
 	let hostname;					
 	
 	try {
@@ -8,6 +8,10 @@ export function getHostName(urlString){
 	catch (err) {
 		// For now just add "www." to the beginning of the string if it's not there already!
 		hostname = urlString;
+
+		if (!urlString.trim()) {
+			return "";
+		}
 
 		if (!urlString.startsWith("www.")) {
 			hostname = "www." + urlString;
