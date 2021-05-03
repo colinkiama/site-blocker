@@ -14,7 +14,10 @@ export default class {
 
 	contains(url){
 		this._fillCacheIfEmpty();
-		return this._listCache.contains()
+
+		// An index of -1 means that the url isn't
+		// present in the block list at all.
+		return this._listCache.indexOf(url) > -1;
 	}
 
 

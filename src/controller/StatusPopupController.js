@@ -1,29 +1,33 @@
 import { Controller } from "stimulus";
-import { getHostName } from "../utils/urlHelper.js";
+import { getHostname } from "../utils/urlHelper.js";
+import BlockList from "../utils/blockList.js";
+
 
 export default class extends Controller {
 	static targets = ["url", "status", "unblockInstructions", "blockButton"]
 
 	connect() {
-		this.url = getHostName(window.location.href);
+		this.url = getHostname(window.location.href);
+		this.blockList = new BlockList();
+		
 		if (!this.url) {
 			return;
 		}
 		
 		this.urlTarget.textContent = this.url;
 
-		// this.isBlocked = Blocklist.contains(this.url)
-		this.isBlocked = true;
-		// if (this.isBlocked) {
-		this.updateStatus();
-		// }
-
-		this.updateBlockButton();
-		this.updateUnblockInstructions();
-
-
+		this.isBlocked = this.blockList.contains(this.url)
+		this._updateElements();
+		
 	}
-	updateUnblockInstructions() {
+
+	_updateElements() {
+		this._updateStatus();
+		this._updateBlockButton();
+		this._updateUnblockInstructions();
+	}
+
+	_updateUnblockInstructions() {
 		if (this.isBlocked) {
 			// Dynamically insert message below site info in dom with 
 			// unblock message id (Use popup scope)
@@ -39,13 +43,13 @@ export default class extends Controller {
 		
 	}
 
-	updateBlockButton() {
+	_updateBlockButton() {
 		if (this.isBlocked) {
 			this.blockButtonTarget.parentNode.removeChild(this.blockButtonTarget);
 		}
 	}
 
-	updateStatus() {
+	_updateStatus() {
 		this.statusTarget.textContent = this.isBlocked ? 
 		"Blocked" : "Not Blocked"; 
 
@@ -63,7 +67,13 @@ export default class extends Controller {
 
 	block(){
 		console.log("Block current site")
-		// Blocklist.add(this.url)
+		this.blockList.add(this.url)
+
+		// After succesfull callback. Block the current site
+		// Update targets as needed.
+		this.isBlocked = true;
+
+		this._updateElements();
 	}
 	
 
