@@ -68,7 +68,6 @@ export default class extends Controller {
 				return;
 			}
 
-			console.log("Add result value:", addResult.value);			
 			this.addBlockListItem(hostNameToAdd);
 				
 		}

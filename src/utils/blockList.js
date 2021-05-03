@@ -21,7 +21,6 @@ export default class {
 
 		try {
 			await this._saveList();
-			result.value = this._listCache;
 		}
 		catch (err) {
 			// Undo last add.
@@ -30,12 +29,11 @@ export default class {
 			result.error = err;
 		}
 
-		console.log("List Cache:", this._listCache);
 		return result;
 } 
 	
 	async remove(url) {
-		this._fillCacheIfEmpty();
+		await this._fillCacheIfEmpty();
 		let result = {};
 		
 		let itemIndex = this._listCache.indexOf(url);
@@ -107,9 +105,4 @@ export default class {
 	async _loadList() {
 		return await Storage.load(blockListStorageKey);
 	}
-
-
-
-
-
 }
