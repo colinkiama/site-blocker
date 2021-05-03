@@ -27,15 +27,15 @@ main > div > div:first-of-type {
 	@extend %container;
 }
 
-#add-site-button {
-	margin-top: 0.25rem;
-}
 
-.block-list {
+
+.block-list	 {
 	@extend %container;
+	display: flex;
+	flex-direction: column;
 	flex: 1 1 0px;
-	margin-top: 1.5rem;	
-	padding-top: 1rem;
+	margin-top: 1rem;
+	
 
 	@media (min-width: 800px) {
 		width: 43.75rem;

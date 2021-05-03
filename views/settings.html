@@ -16,59 +16,18 @@
 				</header>
 
 				
-				<div>
-					<button id="add-site-button" class="primary">Add</button>
-				</div>
+				<div class="block-list" data-controller="block-list">
+					<div>
+						<button id="add-site-button" class="primary" data-action="click->block-list#add">Add</button>
+					</div>
 
-				<ul class="block-list">
-					<li class="block-list-item" data-url="facebook.com">
-						<span>facebook.com</span>
-						<button class="primary">Remove</button>
-					</li>
-					<li class="block-list-item" data-url="instagram.com">
-						<span>instagram.com</span>
-						<button class="primary">Remove</button>
-					</li>
-					<li class="block-list-item" data-url="tiktok.com">
-						<span>tiktok.com</span>
-						<button class="primary">Remove</button>
-					</li>
-					<li class="block-list-item" data-url="tiktok.com">
-						<span>tiktok.com</span>
-						<button class="primary">Remove</button>
-					</li>
-					<li class="block-list-item" data-url="tiktok.com">
-						<span>tiktok.com</span>
-						<button class="primary">Remove</button>
-					</li>
-					<li class="block-list-item" data-url="tiktok.com">
-						<span>tiktok.com</span>
-						<button class="primary">Remove</button>
-					</li>
-					<li class="block-list-item" data-url="tiktok.com">
-						<span>tiktok.com</span>
-						<button class="primary">Remove</button>
-					</li>
-					<li class="block-list-item" data-url="tiktok.com">
-						<span>tiktok.com</span>
-						<button class="primary">Remove</button>
-					</li>
-					<li class="block-list-item" data-url="tiktok.com">
-						<span>tiktok.com</span>
-						<button class="primary">Remove</button>
-					</li>
-					<li class="block-list-item" data-url="tiktok.com">
-						<span>tiktok.com</span>
-						<button class="primary">Remove</button>
-					</li>
-					<li class="block-list-item" data-url="tiktok.com">
-						<span>tiktok.com</span>
-						<button class="primary">Remove</button>
-					</li>
-				</ul>
+					<ul data-block-list-target="listElement">
+						
+					</ul>
+				</div>
 			</div>	
 		</main>
-		<script src="/src/settngs.js" type="module"></script>
+		<script src="/src/settings.js" type="module"></script>
 	</body>
 
 	<footer>
