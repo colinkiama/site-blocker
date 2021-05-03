@@ -18,8 +18,9 @@ module.exports = {
   },
    optimize: {    
     entrypoints: [
-    'views/popup/popup.js',
-    'views/background-page/background-script.js'
+    'src/popup.js',
+    'src/settings.js',
+    'src/background-script.js'
     ],
     bundle: true,
     minify: true,

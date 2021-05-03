@@ -4,15 +4,15 @@
   "description": "Blocks sites",
   "manifest_version": 2,
   "background": {
-    "page": "views/background-page/background-page.html"
+    "page": "views/background-page.html"
   },
   "browser_action": {
     "default_icon": "assets/icons/icon-32.png",
     "default_title": "Site Blocker",
-    "default_popup": "views/popup/popup.html"
+    "default_popup": "views/popup.html"
   },
   "options_ui": {
-    "page": "views/options/options.html",
+    "page": "views/options.html",
     "browser_style": false,
     "chrome_style": false,
     "open_in_tab": true

@@ -1,6 +1,6 @@
 const sass = require("sass");
 const fs = require('fs-extra')
-const viewNames = ["popup", "options", "site-blocked"];
+const viewNames = ["popup", "settings", "site-blocked"];
 
 function buildAndCopySass(sourcePath, destinationPath){
 	try {

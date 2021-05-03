@@ -1,33 +1,32 @@
  <!DOCTYPE html>
 <html>
-<head>
-	<meta charset="utf-8">
-  	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>Site Blocker Popup</title>
-	<link rel="stylesheet" type="text/css" href="/dist/app.css">
-	<link rel="stylesheet" type="text/css" href="/dist/popup.css">
-</head>
-<body>
-	<header>
-		<div class="border-line"></div>
-		<span>Site Blocker</span>
-		<div class="border-line"></div>
-	</header>
-	
-	<main>
-
-		<div class="site-info">
-			<span id="site-url">facebook.com</span>
-			<span id="blocked-status">Not blocked</span>
-		</div>
-
-		<div class="actions">
-			<button id="settings" class="secondary">Settings</button>
-			<button id="block" class="primary">Block</button>
-		</div>
-	</main>
-	
-	<script src="/src/popup.js" type="module"></script>
+	<head>
+		<meta charset="utf-8">
+	  	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>Site Blocker Popup</title>
+		<link rel="stylesheet" type="text/css" href="/dist/app.css">
+		<link rel="stylesheet" type="text/css" href="/dist/popup.css">
+	</head>
+	<body>
+		<header>
+			<div class="border-line"></div>
+			<span>Site Blocker</span>
+			<div class="border-line"></div>
+		</header>
 		
-</body>
+		<main data-controller="status-popup">
+			<div class="site-info">
+				<span id="site-url" data-status-popup-target="url">facebook.com</span>
+				<span id="blocked-status" data-status-popup-target="status">Not blocked</span>
+			</div>
+
+			<div class="actions">
+				<button id="settings" class="secondary" data-action="status-popup#navigateToSettings">Settings</button>
+				<button id="block" data-action="status-popup#block" class="primary">Block</button>
+			</div>
+		</main>
+		
+		<script src="/src/popup.js" type="module"></script>
+			
+	</body>
 </html>
