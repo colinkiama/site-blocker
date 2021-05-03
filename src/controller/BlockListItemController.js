@@ -14,7 +14,7 @@ export default class extends Controller {
 	async delete() {
 		let deletionResult = await blockList.remove(this.urlValue);
 		if (deletionResult.error) {
-			console.log(deletionResult.error);
+			console.error(deletionResult.error);
 			return;
 		}
 

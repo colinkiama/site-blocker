@@ -6,7 +6,6 @@ export default class extends Controller {
 	static targets = ["listElement"];
 
 	async connect() {
-		console.log("retreiving all blocklist items");
 		this.blockList = new BlockList();
 		this.list = [];
 		let listResult = await this.blockList.list();
