@@ -1,10 +1,14 @@
 import { Controller } from "stimulus";
+import { getHostName } from "../utils/URLHelper.js";
 
 export default class extends Controller {
 	static targets = ["url", "status", "unblockInstructions", "blockButton"]
 
 	connect() {
-		console.log("Status Popup is active!");
+		this.url = getHostName(window.location.href);
+		if (this.url) {
+			this.urlTarget.textContent = this.url;
+		}
 	}
 
 	navigateToSettings() {
@@ -13,8 +17,13 @@ export default class extends Controller {
 			active: true,
 			url: window.browser.runtime.getURL("views/settings.html")
 		});
-
 	}
+
+	block(){
+		console.log("Block current site")
+		
+	}
+	
 
 
 
