@@ -5,12 +5,9 @@
   "watch": {
     "sass:build:prod": {
       "patterns": [
-        "app",
-        "components",
-        "views"
+        "sass"
       ],
-      "extensions": "scss",
-      "runOnChangeOnly": true
+      "extensions": "scss"
     }
   },
   "scripts": {
