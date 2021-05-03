@@ -1,5 +1,4 @@
 import { Controller } from "stimulus";
-import { getHostname } from "../utils/URLHelper.js"; 
 
 export default class extends Controller {
 	static values = {url: String};

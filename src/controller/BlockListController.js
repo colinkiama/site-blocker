@@ -1,18 +1,20 @@
 import { Controller } from "stimulus";
-import { getHostname } from "../utils/URLHelper.js"; 
+import { getHostname } from "../utils/urlHelper.js"; 
+import BlockList from "../utils/blockList.js";
 
 export default class extends Controller {
 	static targets = ["listElement"];
 
 	connect() {
 		console.log("retreiving all blocklist items");
-		this.blockList = ["www.tiktok.com", "www.facebook.com"];
+		this.blockList = new BlockList();
+		this.list = this.blockList.list();
 		this.createListElements();
 	}
 
 	createListElements(){
-		for (var i = this.blockList.length - 1; i >= 0; i--) {
-			let url = this.blockList[i];
+		for (var i = this.list.length - 1; i >= 0; i--) {
+			let url = this.list[i];
 
 			this.addBlockListItem(url);
 		}
@@ -49,6 +51,7 @@ export default class extends Controller {
 				return;
 			}
 			
+			this.blockList.add(url);
 			// If blocklist callback returns a succesful result
 			// Add the new item to the DOM
 			this.addBlockListItem(hostNameToAdd);

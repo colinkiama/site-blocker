@@ -1,5 +1,5 @@
 import { Controller } from "stimulus";
-import { getHostName } from "../utils/URLHelper.js";
+import { getHostName } from "../utils/urlHelper.js";
 
 export default class extends Controller {
 	static targets = ["url", "status", "unblockInstructions", "blockButton"]

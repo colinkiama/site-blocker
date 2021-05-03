@@ -9,8 +9,6 @@ main {
 		padding-top: 5rem;
 		align-items: center;	
 	}
-
-	
 }
 
 header {
@@ -27,8 +25,6 @@ main > div > div:first-of-type {
 	@extend %container;
 }
 
-
-
 .block-list	 {
 	@extend %container;
 	display: flex;
@@ -36,12 +32,9 @@ main > div > div:first-of-type {
 	flex: 1 1 0px;
 	margin-top: 1rem;
 	
-
 	@media (min-width: 800px) {
 		width: 43.75rem;
 	}
-
-	
 }
 
 
