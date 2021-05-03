@@ -32,5 +32,7 @@
     "snowpack": "^3.3.7",
     "web-ext": "^6.1.0"
   },
-  "dependencies": {}
+  "dependencies": {
+    "stimulus": "^2.0.0"
+  }
 }

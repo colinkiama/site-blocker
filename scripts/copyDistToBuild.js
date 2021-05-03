@@ -1,7 +1,7 @@
 const fs = require('fs-extra');
 
-const srcDir = `./dist`;
-const destDir = `./build/dist`;
+const srcDir = `dist`;
+const destDir = `build/dist`;
 
 
 

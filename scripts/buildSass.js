@@ -18,8 +18,8 @@ function buildAndCopySass(sourcePath, destinationPath){
 }
 // Build view styles.
 viewNames.forEach(name => {
-	const sourcePath = `./app/sass/views/${name}.scss`;
-	const destinationPath = `./dist/${name}.css`;
+	const sourcePath = `sass/views/${name}.scss`;
+	const destinationPath = `dist/${name}.css`;
 
 	buildAndCopySass(sourcePath, destinationPath);
 	
@@ -28,8 +28,8 @@ viewNames.forEach(name => {
 
 // Build global styles
 const globalStyleName = 'app';
-const sourcePath = `./${globalStyleName}/sass/${globalStyleName}.scss`;
-const destinationPath = `./dist/${globalStyleName}.css`;
+const sourcePath = `sass/${globalStyleName}.scss`;
+const destinationPath = `dist/${globalStyleName}.css`;
 
 buildAndCopySass(sourcePath, destinationPath);
 
