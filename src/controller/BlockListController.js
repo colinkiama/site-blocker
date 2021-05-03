@@ -5,10 +5,20 @@ import BlockList from "../utils/blockList.js";
 export default class extends Controller {
 	static targets = ["listElement"];
 
-	connect() {
+	async connect() {
 		console.log("retreiving all blocklist items");
 		this.blockList = new BlockList();
-		this.list = this.blockList.list();
+		this.list = [];
+		let listResult = await this.blockList.list();
+
+		if(listResult.error){
+			console.error(listResult.error);
+			return;
+		}
+		
+		this.list = listResult.value;
+
+		console.log(this.list);
 		this.createListElements();
 	}
 
@@ -40,7 +50,7 @@ export default class extends Controller {
         this.listElementTarget.appendChild(blockListItem);
     }
 
-	add() {
+	async add() {
 		let url = window.prompt("Enter a url to block:");
 
 		try{
@@ -51,10 +61,16 @@ export default class extends Controller {
 				return;
 			}
 			
-			this.blockList.add(url);
-			// If blocklist callback returns a succesful result
-			// Add the new item to the DOM
+			let addResult = await this.blockList.add(url);
+
+			if (addResult.error){
+				console.error(addResult.error);
+				return;
+			}
+
+			console.log("Add result value:", addResult.value);			
 			this.addBlockListItem(hostNameToAdd);
+				
 		}
 		catch (err) {
 			window.alert(err);
