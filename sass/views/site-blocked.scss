@@ -1,0 +1,57 @@
+@use "../abstracts/colors";
+
+@keyframes animateBackground {
+	from {
+		background-color: hsla(200, 54%, 95%, 1);
+	}
+
+	50% {
+		background-color: hsla(360, 54%, 95%, 1);
+	}
+	51%{
+		background-color: hsla(0, 54%, 95%, 1);
+	}
+
+	to {
+		background-color: hsla(200, 54%, 95%, 1);
+	}
+}
+
+body {
+	display: flex;
+	text-align: center;
+ 	animation-name: animateBackground;
+  	animation-duration: 10s;
+  	animation-iteration-count: infinite;
+  	animation-direction: alternate;
+  	color: #000;
+}
+
+main {
+	flex-direction: column;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	flex: 1 1 0%;
+}
+
+h1 {
+	margin-bottom: 1.25rem;
+	font-size: 4.5rem;
+}
+
+h2 {
+	margin-bottom: 3rem;
+}
+
+h2 + span {
+	font-size: 1.125rem;
+}
+
+a {
+	color: #000;
+}
+
+a:hover {
+	color: colors.$medium-gray;
+}

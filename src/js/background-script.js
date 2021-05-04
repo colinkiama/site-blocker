@@ -17,9 +17,9 @@ async function handleUpdated(tabId, changeInfo, tabInfo) {
 	let isInBlockList = await blockList.contains(updatedTabHostname);
 
 	if (isInBlockList) {
-		window.browser.tabs.update(tabId,{
-		url: window.browser.runtime.getURL("views/site-blocked.html"),
-		loadReplace: true
+		window.browser.tabs.update(tabId, {
+			url: window.browser.runtime.getURL("views/site-blocked.html"),
+			loadReplace: true
 		});
 	}
 }
