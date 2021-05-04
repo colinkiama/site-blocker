@@ -26,5 +26,6 @@ module.exports = {
     bundle: true,
     minify: true,
     target: 'es2017',
+    sourcemap: false
   },
 };

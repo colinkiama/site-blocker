@@ -17,8 +17,12 @@
   "background": {
     "page": "views/background-page.html"
   },
+  "icons": {
+    "48": "assets/icons/icon.png",
+    "96": "assets/icons/icon@2x.png"
+  },
   "browser_action": {
-    "default_icon": "assets/icons/icon-32.png",
+    "default_icon": "assets/icons/action-icon.png",
     "default_title": "Site Blocker",
     "default_popup": "views/popup.html"
   },
