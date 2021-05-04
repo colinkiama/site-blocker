@@ -14,6 +14,7 @@
   "scripts": {
     "start": "concurrently \"npm run sass:watch\" \"npm run sass:build && snowpack dev\"",
     "build": "npm run sass:build && snowpack build && npm run extensionfiles:copy",
+    "build:prod": "npm run build && web-ext build -s build --overwrite-dest",
     "dev": "concurrently \"npm run sass:watch\" \"npm run build && web-ext run -s build\"",
     "extensionfiles:copy": "node scripts/copyExtensionFiles.js",
     "sass:build": "node scripts/buildSass.js",
