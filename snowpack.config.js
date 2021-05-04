@@ -6,6 +6,7 @@ module.exports = {
   mount: {
     /* ... */
   },
+  root:"./src",
   packageOptions: {
      polyfillNode: true,
     /* ... */
@@ -14,13 +15,13 @@ module.exports = {
     /* ... */
   },
   buildOptions: {
-    /* ... */
+    out: "./build"
   },
    optimize: {    
     entrypoints: [
-    'src/popup.js',
-    'src/settings.js',
-    'src/background-script.js'
+    'src/js/popup.js',
+    'src/js/settings.js',
+    'src/js/background-script.js'
     ],
     bundle: true,
     minify: true,

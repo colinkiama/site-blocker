@@ -6,7 +6,7 @@ import BlockList from "../utils/blockList.js";
 export default class extends Controller {
 	static targets = ["url", "status", "unblockInstructions", "blockButton"]
 
-	connect() {
+	async connect() {
 		this.url = getHostname(window.location.href);
 		this.blockList = new BlockList();
 		
@@ -16,7 +16,7 @@ export default class extends Controller {
 		
 		this.urlTarget.textContent = this.url;
 
-		this.isBlocked = this.blockList.contains(this.url)
+		this.isBlocked = await this.blockList.contains(this.url)
 		this._updateElements();
 		
 	}
@@ -62,17 +62,22 @@ export default class extends Controller {
 			url: window.browser.runtime.getURL("views/settings.html")
 		});
 
-		// TODO: Close Popup
+		// Close Popup
+		window.close();
 	}
 
-	block(){
+	async block(){
 		console.log("Block current site")
-		this.blockList.add(this.url)
+		let addResult = await this.blockList.add(this.url)
+
+		if (addResult.error) {
+			console.error(addResult.error);
+			return;
+		}
 
 		// After succesfull callback. Block the current site
 		// Update targets as needed.
 		this.isBlocked = true;
-
 		this._updateElements();
 	}
 	

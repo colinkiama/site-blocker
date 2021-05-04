@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+	  	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>Site Blocker Options</title>
+		<link rel="stylesheet" type="text/css" href="/dist/app.css">
+		<link rel="stylesheet" type="text/css" href="/dist/settings.css">
+	</head>
+	<body>
+		<main>
+			<div>
+				<header>
+					<h1>Settings</h1>
+					<h2>Blocked Sites</h2>	
+				</header>
+
+				
+				<div class="block-list" data-controller="block-list">
+					<div>
+						<button id="add-site-button" class="primary" data-action="click->block-list#add">Add</button>
+					</div>
+
+					<ul data-block-list-target="listElement">
+						
+					</ul>
+				</div>
+			</div>	
+		</main>
+		<script src="/js/settings.js" type="module"></script>
+	</body>
+
+	<footer>
+		<span>&copy; Made by <a href="https://www.colinkiama.com">Colin Kiama</a> - 2021</span>
+	</footer>
+</html>
