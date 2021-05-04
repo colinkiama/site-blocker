@@ -7,7 +7,18 @@ export default class extends Controller {
 	static targets = ["url", "status", "unblockInstructions", "blockButton"]
 
 	async connect() {
-		this.url = getHostname(window.location.href);
+		let tabQueryResult = await window.browser.tabs.query({active: true});
+
+
+
+
+		if(tabQueryResult.length > 0) {
+			this.currentTab = tabQueryResult[0];
+			this.url = getHostname(this.currentTab.url);
+
+		} else {
+			this.url = getHostname("urlnotfound.error");
+		}
 		this.blockList = new BlockList();
 		
 		if (!this.url) {
