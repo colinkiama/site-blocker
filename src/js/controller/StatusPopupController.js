@@ -9,9 +9,6 @@ export default class extends Controller {
 	async connect() {
 		let tabQueryResult = await window.browser.tabs.query({active: true});
 
-
-
-
 		if(tabQueryResult.length > 0) {
 			this.currentTab = tabQueryResult[0];
 			this.url = getHostname(this.currentTab.url);
@@ -90,11 +87,18 @@ export default class extends Controller {
 		// Update targets as needed.
 		this.isBlocked = true;
 		this._updateElements();
+
+		try {
+			await window.browser.tabs.update(this.currentTab.id, {
+				url: window.browser.runtime.getURL("views/site-blocked.html"),
+				loadReplace: true
+			});
+
+
+		}
+		catch (err) {
+			console.log(err);
+		}
 	}
-	
-
-
-
-
 }
 
