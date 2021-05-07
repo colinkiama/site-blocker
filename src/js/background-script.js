@@ -6,8 +6,7 @@ import BlockList from "./utils/blockList.js";
 // Need to filter with status property for Firefox versions older
 // than 88;
 const filter = {
-  properties: ["url", "status"],
-  windowId: window.browser.windows.WINDOW_ID_CURRENT
+  properties: ["url", "status"]
 }
 
 async function handleUpdated(tabId, changeInfo, tabInfo) {

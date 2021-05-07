@@ -1,6 +1,11 @@
 # Site Blocker
 
 Extension that blocks sites
+![Popup](img/popup.png)
+
+![Popup in blocked site](img/popup-blocked-state.png)
+
+![Settings page](img/settings.png)
 
 ## Prequisites
 
