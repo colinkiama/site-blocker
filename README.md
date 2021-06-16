@@ -2,6 +2,8 @@
 
 Extension that blocks sites
 
+Get it here!: https://addons.mozilla.org/en-GB/firefox/addon/full-stop/
+
 ![Popup](img/popup.png)
 
 ![Popup in blocked site](img/popup-blocked-state.png)
