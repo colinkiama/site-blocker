@@ -1,6 +1,7 @@
 import { Controller } from "stimulus";
 import { getHostname } from "../utils/urlHelper.js"; 
 import BlockList from "../utils/blockList.js";
+import * as BlockListItemElement from "../fragments/BlockList/Item.js";
 
 export default class extends Controller {
 	static targets = ["listElement"];
@@ -25,28 +26,13 @@ export default class extends Controller {
 		for (var i = this.list.length - 1; i >= 0; i--) {
 			let url = this.list[i];
 
-			this.addBlockListItem(url);
+			this.addBlockListItem(url)
 		}
 	}
 
     addBlockListItem(url) {
-        let urlSpan = document.createElement("span");
-        urlSpan.textContent = url;
-
-        let removeButton = document.createElement("button");
-        removeButton.textContent = "Remove";
-        removeButton.classList.add("primary");
-        removeButton.setAttribute("data-action", "block-list-item#delete");
-
-        let blockListItem = document.createElement('li');
-        blockListItem.classList.add("block-list-item");
-        blockListItem.setAttribute("data-controller", "block-list-item");
-        blockListItem.setAttribute("data-block-list-item-url-value", url);
-
-        blockListItem.appendChild(urlSpan);
-        blockListItem.appendChild(removeButton);
-
-        this.listElementTarget.appendChild(blockListItem);
+        let blockListItem = BlockListItemElement.create(url);
+		this.listElementTarget.appendChild(blockListItem);
     }
 
 	async add() {
