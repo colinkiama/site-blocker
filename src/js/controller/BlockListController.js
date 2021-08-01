@@ -33,6 +33,10 @@ export default class extends Controller {
     addBlockListItem(url, options = {}) {
         let blockListItem = BlockListItemElement.create(url);
       	
+      	// Warning: Using `undefined`
+      	// Reasons:
+      	// 1. Object.hasOwnProperty was not working correctly
+      	// 2. "in" operator is unsuitable.
       	let indexExists = options["index"] !== undefined;
       	console.log("index exists:", indexExists);
 
