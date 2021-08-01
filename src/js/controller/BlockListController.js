@@ -30,10 +30,21 @@ export default class extends Controller {
 		}
 	}
 
-    addBlockListItem(url) {
+    addBlockListItem(url, options = {}) {
         let blockListItem = BlockListItemElement.create(url);
-		this.listElementTarget.appendChild(blockListItem);
+      	
+      	let indexExists = options["index"] !== undefined;
+      	console.log("index exists:", indexExists);
+
+  		if (indexExists) {
+	        let existingElementAtPosition = this.listElementTarget.children[options.index];
+        	existingElementAtPosition.insertAdjacentElement('beforebegin', blockListItem)
+  		}
+      	 else {
+			this.listElementTarget.appendChild(blockListItem);
+        }
     }
+    
 
 	async add() {
 		let url = window.prompt("Enter a url to block:");
@@ -53,7 +64,13 @@ export default class extends Controller {
 				return;
 			}
 
-			this.addBlockListItem(hostNameToAdd);
+			console.log("Add Result:", addResult);
+
+			let options =  {
+				index: addResult.index
+			}
+
+			this.addBlockListItem(hostNameToAdd, options);
 				
 		}
 		catch (err) {

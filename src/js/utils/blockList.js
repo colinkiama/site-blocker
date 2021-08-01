@@ -14,17 +14,26 @@ export default class {
 
 		if (this._listCache.indexOf(url) > -1) {
 			// URL is already in list
+			result.error = new Error("URL is already in list");
 			return result;
 		}
+
+		let listWasEmpty = this._listCache.length === 0;
 		
 		this._listCache = [...this._listCache, url ];
+		this._listCache.sort();
+		
+		const itemIndex = this._listCache.indexOf(url);
 
 		try {
 			await this._saveList();
+			
+			if (!listWasEmpty && itemIndex < this._listCache.length -1) {
+				result.index = itemIndex;
+			}
 		}
 		catch (err) {
 			// Undo last add.
-			const itemIndex = this._listCache.indexOf(url);
 			this._listCache.splice(itemIndex, 1);
 			result.error = err;
 		}
