@@ -1,5 +1,7 @@
 # Site Blocker
 
+**Update**: Project is now archived. New version is in: https://www.gitlab.com/colinkiama/jailtime
+
 Extension that blocks sites
 
 Get it here!: https://addons.mozilla.org/en-GB/firefox/addon/full-stop/
